@@ -1,12 +1,11 @@
 import { Tabs } from 'expo-router';
-import { TouchableOpacity } from 'react-native';
-import { HouseIcon, WalletIcon, PackageIcon, ClockIcon } from 'phosphor-react-native';
+import { View } from 'react-native';
+import { HouseIcon, PackageIcon, ClockIcon } from 'phosphor-react-native';
 
 const TabData = [
-  { name: 'index', icon: PackageIcon },
+  { name: 'index', icon: HouseIcon },
   { name: 'history', icon: ClockIcon },
-  { name: 'wallet', icon: WalletIcon },
-  { name: 'profile', icon: HouseIcon },
+  { name: 'profile', icon: PackageIcon },
 ];
 
 export default function Authlayout() {
@@ -15,13 +14,16 @@ export default function Authlayout() {
       screenOptions={{
         tabBarPosition: 'bottom',
         tabBarStyle: {
-          height: 80,
+          position: 'absolute',
+          bottom: 20,
+          marginHorizontal: 80,
+          height: 60,
           backgroundColor: '#000000',
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-          paddingHorizontal: 10,
-          paddingTop: 20,
+          borderRadius: 35,
+          paddingHorizontal: 5,
+          paddingTop: 10,
           borderTopColor: 'transparent',
+          elevation: 0,
         },
       }}>
       {TabData.map((tab) => (
@@ -35,9 +37,21 @@ export default function Authlayout() {
             tabBarIcon: ({ focused }) => {
               const Icon = tab.icon;
               return (
-                <TouchableOpacity className="">
-                  <Icon size={28} color={focused ? '#F56C27' : '#ffffff'} />
-                </TouchableOpacity>
+                <View
+                  style={{
+                    paddingHorizontal: 18,
+                    paddingVertical: 16,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 24,
+                    backgroundColor: focused ? 'rgba(255,255,255,0.9)' : 'transparent',
+                  }}>
+                  <Icon
+                    size={26}
+                    color={focused ? '#F56C27' : '#ffffff'}
+                    weight={focused ? 'fill' : 'regular'}
+                  />
+                </View>
               );
             },
           }}

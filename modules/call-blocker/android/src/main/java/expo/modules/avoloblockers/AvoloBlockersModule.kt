@@ -27,6 +27,17 @@ class CallBlockerModule : Module() {
             )
         }
 
+        Function("getBlockedCalls") {
+            val ctx = appContext.reactContext ?: return@Function emptyList<Map<String, Any?>>()
+            BlockedCallStore.getAll(ctx)
+        }
+
+        Function("clearBlockedCalls") {
+            val ctx = appContext.reactContext ?: return@Function false
+            BlockedCallStore.clear(ctx)
+            true
+        }
+
         Function("isRoleHeld") {
             val ctx = appContext.reactContext ?: return@Function false
             val rm = ctx.getSystemService(Context.ROLE_SERVICE) as RoleManager

@@ -38,7 +38,7 @@ export default function BlocklistScreen() {
   const remove = (value: string) => setEntries((prev) => prev.filter((e) => e.value !== value));
 
   return (
-    <SafeAreaView className="bg-ink flex-1">
+    <SafeAreaView className="flex-1">
       <View className="px-5 pb-6 pt-4">
         <Text className="text-2xl font-bold text-white">Call Blocker</Text>
         <Text className="text-muted mt-1 text-sm">Silently rejects matching incoming calls.</Text>

@@ -6,8 +6,10 @@ import { Slot } from 'expo-router';
 export default function RootLayout() {
   return (
     <SafeAreaProvider className="flex-1">
-      <StatusBar />
-      <SafeAreaView edges={['top']} style={{ flex: 1 }}>
+      <StatusBar style="auto" backgroundColor="#000000" translucent={true} />
+      <SafeAreaView
+        edges={['top', 'bottom', 'right', 'left']}
+        style={{ flex: 1, backgroundColor: '#ffffff' }}>
         <Slot />
       </SafeAreaView>
     </SafeAreaProvider>
