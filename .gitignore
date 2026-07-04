@@ -1,0 +1,28 @@
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+
+
+
+/ios
+/android
+
+# Keep native module source directories
+!modules/**/android
+!modules/**/ios
+
+# macOS
+.DS_Store
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+modules/call-blocker/android/src/main/java/expo/modules/avoloblockers/AvoloBlockersScreeningService.kt

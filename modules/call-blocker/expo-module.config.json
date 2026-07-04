@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["CallBlockerModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.avoloblockers.CallBlockerModule"]
+  }
+}

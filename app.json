@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Avolo",
+    "slug": "avolo",
+    "version": "1.0.0",
+    "scheme": "avolo",
+    "web": {
+      "favicon": "./assets/favicon1.png"
+    },
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "plugins": [
+      "expo-router",
+      "expo-build-properties"
+    ],
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash2.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.avolo"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png"
+      },
+      "package": "com.anonymous.avolo"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "0ca4597b-f2c7-4904-9653-a3457668b8b7"
+      }
+    }
+  }
+}
