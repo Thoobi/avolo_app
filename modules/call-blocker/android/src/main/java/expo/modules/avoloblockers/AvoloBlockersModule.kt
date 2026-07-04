@@ -35,14 +35,16 @@ class CallBlockerModule : Module() {
         }
 
         Function("requestRole") {
-            val activity = appContext.currentActivity ?: return@Function null
+            val activity = appContext.currentActivity ?: return@Function false
             val rm = activity.getSystemService(Context.ROLE_SERVICE) as RoleManager
             if (rm.isRoleAvailable(RoleManager.ROLE_CALL_SCREENING) &&
                 !rm.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
             ) {
                 val intent = rm.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING)
                 activity.startActivityForResult(intent, 1001)
+                return@Function true
             }
+            return@Function false
         }
     }
 }
