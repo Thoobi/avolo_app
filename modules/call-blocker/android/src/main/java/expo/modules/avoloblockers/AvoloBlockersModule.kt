@@ -31,14 +31,15 @@ class CallBlockerModule : Module() {
             val ctx = appContext.reactContext ?: return@Function false
             val rm = ctx.getSystemService(Context.ROLE_SERVICE) as RoleManager
             rm.isRoleAvailable(RoleManager.ROLE_CALL_SCREENING) &&
-                rm.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
+                    rm.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
         }
 
         Function("requestRole") {
-            val activity = appContext.currentActivity ?: return@Function
+            val activity = appContext.currentActivity ?: return@Function null
             val rm = activity.getSystemService(Context.ROLE_SERVICE) as RoleManager
             if (rm.isRoleAvailable(RoleManager.ROLE_CALL_SCREENING) &&
-                !rm.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)) {
+                !rm.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
+            ) {
                 val intent = rm.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING)
                 activity.startActivityForResult(intent, 1001)
             }
