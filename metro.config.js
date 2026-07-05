@@ -11,5 +11,5 @@ config.watchFolders = [path.join(__dirname, 'node_modules')];
 
 // Resolve symlinked modules correctly
 config.resolver.nodeModulesPaths = [path.resolve(__dirname, 'node_modules')];
-
+// Apply NativeWind
 module.exports = withNativeWind(config, { input: './global.css' });

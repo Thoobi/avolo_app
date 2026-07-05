@@ -1,5 +1,5 @@
 import { Tabs } from 'expo-router';
-import { View } from 'react-native';
+import { BlurView } from 'expo-blur';
 import { HouseIcon, PackageIcon, ClockIcon } from 'phosphor-react-native';
 
 const TabData = [
@@ -18,7 +18,7 @@ export default function Authlayout() {
           bottom: 20,
           marginHorizontal: 80,
           height: 60,
-          backgroundColor: '#000000',
+          backgroundColor: 'rgba(0, 0, 15, 0.2)',
           borderRadius: 35,
           paddingHorizontal: 5,
           paddingTop: 10,
@@ -37,13 +37,17 @@ export default function Authlayout() {
             tabBarIcon: ({ focused }) => {
               const Icon = tab.icon;
               return (
-                <View
+                <BlurView
+                  intensity={focused ? 50 : 0}
+                  tint="light"
+                  experimentalBlurMethod="dimezisBlurView"
                   style={{
-                    paddingHorizontal: 18,
+                    paddingHorizontal: 20,
                     paddingVertical: 16,
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 24,
+                    overflow: 'hidden',
                     backgroundColor: focused ? 'rgba(255,255,255,0.9)' : 'transparent',
                   }}>
                   <Icon
@@ -51,7 +55,7 @@ export default function Authlayout() {
                     color={focused ? '#F56C27' : '#ffffff'}
                     weight={focused ? 'fill' : 'regular'}
                   />
-                </View>
+                </BlurView>
               );
             },
           }}

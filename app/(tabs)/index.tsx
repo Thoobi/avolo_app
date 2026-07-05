@@ -38,10 +38,10 @@ export default function BlocklistScreen() {
   const remove = (value: string) => setEntries((prev) => prev.filter((e) => e.value !== value));
 
   return (
-    <SafeAreaView className="flex-1">
-      <View className="px-5 pb-6 pt-4">
-        <Text className="text-2xl font-bold text-white">Call Blocker</Text>
-        <Text className="text-muted mt-1 text-sm">Silently rejects matching incoming calls.</Text>
+    <SafeAreaView className="flex-1 px-4">
+      <View className="pb-6">
+        <Text className="text-xl font-bold text-black">Call Blocker</Text>
+        <Text className="mt-1 text-sm text-muted">Silently rejects matching incoming calls.</Text>
       </View>
 
       {/* Role banner */}
@@ -52,60 +52,60 @@ export default function BlocklistScreen() {
             // re-check shortly after the dialog
             setTimeout(() => setRoleOk(isRoleHeld()), 1500);
           }}
-          className="bg-danger/15 border-danger/40 mx-5 mb-4 rounded-2xl border px-4 py-3">
-          <Text className="text-danger font-semibold">
+          className="mb-4 rounded-2xl border border-danger/40 bg-danger/15 px-4 py-3">
+          <Text className="font-semibold text-danger">
             Blocking is OFF — tap to grant call-screening permission
           </Text>
         </Pressable>
       )}
 
       {/* Input */}
-      <View className="gap-3 px-5">
+      <View className="gap-3">
         <TextInput
           value={input}
           onChangeText={setInput}
           placeholder="+234…  or  full number"
           placeholderTextColor="#5b606b"
           keyboardType="phone-pad"
-          className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white"
+          className="rounded-2xl border border-black bg-white/5 px-4 py-3 text-base text-black dark:text-black"
         />
 
         <View className="flex-row items-center justify-between rounded-2xl bg-white/5 px-4 py-3">
-          <Text className="text-white">
+          <Text className="text-black">
             {asPrefix ? 'Block as prefix (range)' : 'Block exact number'}
           </Text>
           <Switch value={asPrefix} onValueChange={setAsPrefix} />
         </View>
 
-        <Pressable onPress={add} className="rounded-2xl bg-white px-4 py-4 active:opacity-80">
-          <Text className="text-ink text-center text-base font-semibold">Add to blocklist</Text>
+        <Pressable onPress={add} className="rounded-2xl bg-black px-4 py-4 active:opacity-80">
+          <Text className="text-center text-base font-semibold text-white">Add to blocklist</Text>
         </Pressable>
       </View>
 
       {/* List */}
       <FlatList
         className="mt-6"
-        contentContainerClassName="px-5 pb-10 gap-2"
+        contentContainerClassName="pb-10 gap-2"
         data={entries}
         keyExtractor={(e) => e.value}
         ListEmptyComponent={
-          <Text className="text-muted mt-8 text-center">No numbers blocked yet.</Text>
+          <Text className="mt-8 text-center text-muted">No numbers blocked yet.</Text>
         }
         renderItem={({ item }) => (
-          <View className="flex-row items-center justify-between rounded-2xl bg-white/5 px-4 py-3">
-            <View>
-              <Text className="text-base text-white">
+          <View className="flex w-full flex-row items-center justify-between rounded-xl bg-black/5 px-4 py-3">
+            <View className="flex-1">
+              <Text className="text-base text-black">
                 {item.value}
                 {item.isPrefix ? '…' : ''}
               </Text>
-              <Text className="text-muted mt-0.5 text-xs">
+              <Text className="mt-0.5 text-xs text-muted">
                 {item.isPrefix ? 'Prefix' : 'Exact'}
               </Text>
             </View>
             <Pressable
               onPress={() => remove(item.value)}
-              className="bg-danger/15 rounded-xl px-3 py-2 active:opacity-70">
-              <Text className="text-danger font-medium">Remove</Text>
+              className="rounded-lg bg-danger/15 px-3 py-2 active:opacity-70">
+              <Text className="font-semibold text-danger">Remove</Text>
             </Pressable>
           </View>
         )}
