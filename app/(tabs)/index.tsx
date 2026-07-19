@@ -10,7 +10,6 @@ export default function BlocklistScreen() {
   const [input, setInput] = useState('');
   const [asPrefix, setAsPrefix] = useState(true);
   const [roleOk, setRoleOk] = useState(false);
-
   // Load existing list + check role on mount.
   useEffect(() => {
     const { prefixes, exact } = getBlocklist();

@@ -11,6 +11,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "call-blocker": "file:./modules/call-blocker",
     "expo": "^54.0.35",
     "expo-blur": "~15.0.8",
     "expo-build-properties": "^1.0.10",

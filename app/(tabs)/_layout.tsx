@@ -1,11 +1,11 @@
 import { Tabs } from 'expo-router';
 import { BlurView } from 'expo-blur';
-import { HouseIcon, PackageIcon, ClockIcon } from 'phosphor-react-native';
+import { HouseIcon, UserCircleIcon, ClockIcon } from 'phosphor-react-native';
 
 const TabData = [
   { name: 'index', icon: HouseIcon },
   { name: 'history', icon: ClockIcon },
-  { name: 'profile', icon: PackageIcon },
+  { name: 'profile', icon: UserCircleIcon },
 ];
 
 export default function Authlayout() {
@@ -18,7 +18,7 @@ export default function Authlayout() {
           bottom: 20,
           marginHorizontal: 80,
           height: 60,
-          backgroundColor: 'rgba(0, 0, 15, 0.2)',
+          backgroundColor: 'rgba(0, 0, 15, 0.9)',
           borderRadius: 35,
           paddingHorizontal: 5,
           paddingTop: 10,
