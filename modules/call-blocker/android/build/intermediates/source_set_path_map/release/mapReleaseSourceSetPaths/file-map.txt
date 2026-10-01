@@ -1,0 +1,7 @@
+expo.modules.avoloblockers.call-blocker-pngs-0 /home/daniel/Documents/build/Loansly/modules/call-blocker/android/build/generated/res/pngs/release
+expo.modules.avoloblockers.call-blocker-resValues-1 /home/daniel/Documents/build/Loansly/modules/call-blocker/android/build/generated/res/resValues/release
+expo.modules.avoloblockers.call-blocker-mergeReleaseResources-2 /home/daniel/Documents/build/Loansly/modules/call-blocker/android/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+expo.modules.avoloblockers.call-blocker-mergeReleaseResources-3 /home/daniel/Documents/build/Loansly/modules/call-blocker/android/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+expo.modules.avoloblockers.call-blocker-release-4 /home/daniel/Documents/build/Loansly/modules/call-blocker/android/build/intermediates/merged_res/release/mergeReleaseResources
+expo.modules.avoloblockers.call-blocker-main-5 /home/daniel/Documents/build/Loansly/modules/call-blocker/android/src/main/res
+expo.modules.avoloblockers.call-blocker-release-6 /home/daniel/Documents/build/Loansly/modules/call-blocker/android/src/release/res
